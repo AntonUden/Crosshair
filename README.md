@@ -1,4 +1,4 @@
 # Crosshair
 Crosshair overlay program
 
-Press lShift to toggle visibility
+Press rShift to toggle visibility
