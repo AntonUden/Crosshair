@@ -65,8 +65,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.NotifyIcon Crosshair;
         private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
