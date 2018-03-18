@@ -23,7 +23,6 @@ namespace Crosshair
             gHook.KeyDown += new KeyEventHandler(gHook_KeyDown);
             gHook.HookedKeys.Add(Keys.RShiftKey);
             gHook.hook();
-            notifyIcon.Visible = false;
         }
 
         public void gHook_KeyDown(object sender, KeyEventArgs e)
@@ -35,12 +34,12 @@ namespace Crosshair
             {
                 this.Visible = true;
                 center();
-                notifyIcon.Visible = false;
+                notifyIcon.Text = "Crosshair is running. Right click for options.";
             }
             else
             {
                 this.Visible = false;
-                notifyIcon.Visible = true;
+                notifyIcon.Text = "Crosshair is running in the background. Right click for options";
             }
         }
 
@@ -56,11 +55,6 @@ namespace Crosshair
             center();
         }
 
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            exit();
-        }
-
         private void crosshair_FormClosed(object sender, FormClosedEventArgs e)
         {
             exit();
@@ -71,6 +65,11 @@ namespace Crosshair
             gHook.unhook();
             notifyIcon.Visible = false;
             Environment.Exit(0);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exit();
         }
     }
 }
